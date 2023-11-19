@@ -1,9 +1,17 @@
-import Friend from "./friend";
-function FriendsList({friends}) {
-  
+/* eslint-disable react/prop-types */
+import Friend from "./Friend";
+function FriendsList({ friends, onSelection,
+  SectedFriend}) {
   return (
     <ul>
-     { friends.map((friend)=>(<Friend friend={friend} key={friend.id}/>))}
+      {friends.map((friend) => (
+        <Friend
+          friend={friend}
+          key={friend.id}
+          SectedFriend={SectedFriend}
+          onSelection={onSelection}
+        />
+      ))}
     </ul>
   );
 }
